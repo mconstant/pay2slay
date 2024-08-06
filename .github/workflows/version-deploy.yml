@@ -48,4 +48,4 @@ jobs:
 
       - name: Tag patch and deploy
         run: |
-          cd app && make deploy VERSION_TYPE=$VERSION_TYPE
+          cd app && make initialize_venv && make deploy VERSION_TYPE=$VERSION_TYPE
