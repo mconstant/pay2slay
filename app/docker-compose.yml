@@ -1,10 +1,10 @@
 services:
-  example-deployment:
-    build: ./example-deployment/.
-    container_name: example-deployment
+  kill-listener:
+    build: ./p2s-kill-listener/.
+    container_name: p2s-kill-listener
     environment:
-      TOP_SECRET_MESSAGE: $TOP_SECRET_MESSAGE
-    image: xmconstantx/example-deployment:0.0.2
+      FORTNITE_API_KEY: $FORTNITE_API_KEY
+    image: xmconstantx/p2s-kill-listener:0.0.0
     platform: linux/amd64
     ports:
     - 3000:3000

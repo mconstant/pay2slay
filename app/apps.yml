@@ -1,24 +1,24 @@
 ---
-- example-deployment:
-    image: xmconstantx/example-deployment
+- kill-listener:
+    image: xmconstantx/p2s-kill-listener
     env:
-      TOP_SECRET_MESSAGE: $TOP_SECRET_MESSAGE
+      FORTNITE_API_KEY: $FORTNITE_API_KEY
     ports:
       - source: 3000
         target: 3000
         global: true
     docker_compose:
-      build: ./example-deployment/.
-      container_name: example-deployment
+      build: ./p2s-kill-listener/.
+      container_name: p2s-kill-listener
       platform: linux/amd64
     akash:
       compute:
         cpu:
-          units: 2
+          units: 0.5
         memory:
-          size: 512Mi
+          size: 128Mi
         storage:
-          size: 512Mi
+          size: 10Mi
           persistent: false
           class: default
       placement:
